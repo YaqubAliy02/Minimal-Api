@@ -41,6 +41,18 @@ namespace Minimal_Api.Endpoints
                 return Results.NoContent();
 
             });
+
+            groupBuilder.MapDelete(("/{id:guid}"), async (BookDbContext context, Guid id) =>
+            {
+                var book = await context.Books.FindAsync(id);
+                if (book is null)
+                    return Results.NotFound();
+
+                context.Books.Remove(book);
+                await context.SaveChangesAsync();
+
+                return Results.NoContent();
+            });
             return groupBuilder;
         }
     }
