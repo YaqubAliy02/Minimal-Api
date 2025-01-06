@@ -12,7 +12,7 @@ using Minimal_Api.Data;
 namespace Minimal_Api.Migrations
 {
     [DbContext(typeof(BookDbContext))]
-    [Migration("20250106131024_InitMinimalApi")]
+    [Migration("20250106133317_InitMinimalApi")]
     partial class InitMinimalApi
     {
         /// <inheritdoc />
@@ -44,19 +44,19 @@ namespace Minimal_Api.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("1fc93f34-b33b-42c8-997f-e7658714090d"),
+                            Id = new Guid("d7a09af2-dc8b-4fa4-93d1-c68df8c51753"),
                             Description = "Book 1 Description",
                             Name = "Book 1"
                         },
                         new
                         {
-                            Id = new Guid("db5d7fb1-f254-4a97-9e04-7a3403a6f3fe"),
+                            Id = new Guid("6c5c55d3-4f54-4b90-80d4-d43b9b524d8a"),
                             Description = "Book 2 Description",
                             Name = "Book 2"
                         },
                         new
                         {
-                            Id = new Guid("56d7ef59-0ace-43fc-a9bb-dd8aff6b33bb"),
+                            Id = new Guid("e6d5b92f-3ac1-4c69-a717-5c0c75091649"),
                             Description = "Book 3 Description",
                             Name = "Book 3"
                         });
