@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Minimal_Api.Data;
+using Minimal_Api.Endpoints;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,7 +24,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.MapBookEndpoints();
 app.UseAuthorization();
 app.MapControllers();
 
