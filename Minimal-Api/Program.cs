@@ -24,7 +24,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.MapBookEndpoints();
+app.MapGroup("/api/books").MapBookEndpoints();
 app.UseAuthorization();
 app.MapControllers();
 
