@@ -27,6 +27,20 @@ namespace Minimal_Api.Endpoints
                 await context.SaveChangesAsync();
                 return Results.Created($"/{book.Id}", book);
             });
+
+            groupBuilder.MapPut("/{id:guid}", async (BookDbContext context, Guid id, Book book) =>
+            {
+                var bookResult = await context.Books.FindAsync(id);
+                if (bookResult is null)
+                    return Results.NotFound();
+
+                bookResult.Name = book.Name;
+                bookResult.Description = book.Description;
+                await context.SaveChangesAsync();
+
+                return Results.NoContent();
+
+            });
             return groupBuilder;
         }
     }
